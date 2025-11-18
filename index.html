@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Background Fix</title>
+
+  <style>
+   *{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+   }
+
+    .advent-calendar-section {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+      overflow: visible;
+      display: block;
+    }
+
+    .advent-calendar-section *,
+    .advent-calendar-section *::before,
+    .advent-calendar-section *::after {
+      box-sizing: border-box;
+    }
+
+    .advent-calendar-section .bg-mobile {
+      display: block;
+      width: 100%;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .advent-calendar-section .bg-mobile-2 {
+      display: none;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .advent-calendar-section .star-shadow {
+        width: 50px !important;
+        height: 50px !important;
+      }
+
+      .advent-calendar-section .star span {
+        font-size: 14px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .advent-calendar-section .star-shadow {
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      .advent-calendar-section .star span {
+        font-size: 12px !important;
+      }
+
+      .advent-calendar-section .bg-mobile {
+        display: none;
+      }
+
+      .advent-calendar-section .bg-mobile-2 {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        border: 0;
+      }
+
+      .advent-calendar-section .star-shadow.star-23 {
+        top: 29.5%;
+        left: 33.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-9 {
+        top: 30%;
+        left: 47%;
+      }
+
+      .advent-calendar-section .star-shadow.star-2 {
+        top: 30%;
+        left: 63%;
+      }
+
+      .advent-calendar-section .star-shadow.star-8 {
+        top: 41%;
+        left: 24%;
+      }
+
+      .advent-calendar-section .star-shadow.star-17 {
+        top: 41%;
+        left: 32%;
+      }
+
+      .advent-calendar-section .star-shadow.star-10 {
+        top: 42%;
+        left: 44%;
+      }
+
+      .advent-calendar-section .star-shadow.star-21 {
+        top: 42%;
+        left: 63%;
+      }
+
+      .advent-calendar-section .star-shadow.star-15 {
+        top: 40%;
+        left: 70%;
+      }
+
+      .advent-calendar-section .star-shadow.star-13 {
+        top: 53%;
+        left: 20%;
+      }
+
+      .advent-calendar-section .star-shadow.star-19 {
+        top: 54%;
+        left: 34%;
+      }
+
+      .advent-calendar-section .star-shadow.star-16 {
+        top: 54.5%;
+        left: 55%;
+      }
+
+      .advent-calendar-section .star-shadow.star-12 {
+        top: 52%;
+        left: 75%;
+      }
+
+      .advent-calendar-section .star-shadow.star-18 {
+        top: 65.5%;
+        left: 13.7%;
+      }
+
+      .advent-calendar-section .star-shadow.star-14 {
+        top: 67%;
+        left: 31%;
+      }
+
+      .advent-calendar-section .star-shadow.star-24 {
+        top: 67.2%;
+        left: 44%;
+      }
+
+      .advent-calendar-section .star-shadow.star-4 {
+        top: 67.2%;
+        left: 56%;
+      }
+
+      .advent-calendar-section .star-shadow.star-20 {
+        top: 66.2%;
+        left: 70.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-5 {
+        top: 64.2%;
+        left: 81.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-6 {
+        top: 79%;
+        left: 4%;
+      }
+
+      .advent-calendar-section .star-shadow.star-22 {
+        top: 80.5%;
+        left: 17%;
+      }
+
+      .advent-calendar-section .star-shadow.star-7 {
+        top: 81.5%;
+        left: 31%;
+      }
+
+      .advent-calendar-section .star-shadow.star-3 {
+        top: 82.5%;
+        left: 48%;
+      }
+
+      .advent-calendar-section .star-shadow.star-11 {
+        top: 79.5%;
+        left: 81.2%;
+      }
+    }
+
+    @media(max-width:480px) {
+      .advent-calendar-section .star-shadow.star-23 {
+        top: 29%;
+        left: 32%;
+      }
+
+      .advent-calendar-section .star-shadow.star-9 {
+        top: 29.6%;
+        left: 45.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-2 {
+        top: 29%;
+        left: 61%;
+      }
+
+      .advent-calendar-section .star-shadow.star-8 {
+        top: 39.5%;
+        left: 23%;
+      }
+
+      .advent-calendar-section .star-shadow.star-17 {
+        top: 41%;
+        left: 31%;
+      }
+
+      .advent-calendar-section .star-shadow.star-10 {
+        top: 41%;
+        left: 43%;
+      }
+
+      .advent-calendar-section .star-shadow.star-21 {
+        top: 40%;
+        left: 61%;
+      }
+
+      .advent-calendar-section .star-shadow.star-15 {
+        top: 39%;
+        left: 69%;
+      }
+
+      .advent-calendar-section .star-shadow.star-13 {
+        top: 52%;
+        left: 18%;
+      }
+
+      .advent-calendar-section .star-shadow.star-19 {
+        top: 53.5%;
+        left: 32.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-16 {
+        top: 54%;
+        left: 53%;
+      }
+
+      .advent-calendar-section .star-shadow.star-12 {
+        top: 52%;
+        left: 73%;
+      }
+
+      .advent-calendar-section .star-shadow.star-18 {
+        top: 64%;
+        left: 12%;
+      }
+
+      .advent-calendar-section .star-shadow.star-14 {
+        top: 66%;
+        left: 29.5%;
+      }
+
+      .advent-calendar-section .star-shadow.star-24 {
+        top: 66.4%;
+        left: 42%;
+      }
+
+      .advent-calendar-section .star-shadow.star-4 {
+        top: 66%;
+        left: 54%;
+      }
+
+      .advent-calendar-section .star-shadow.star-20 {
+        top: 65.2%;
+        left: 69%;
+      }
+
+      .advent-calendar-section .star-shadow.star-5 {
+        top: 63%;
+        left: 80%;
+      }
+
+      .advent-calendar-section .star-shadow.star-6 {
+        top: 78%;
+        left: 2%;
+      }
+
+      .advent-calendar-section .star-shadow.star-22 {
+        top: 79.5%;
+        left: 15%;
+      }
+
+      .advent-calendar-section .star-shadow.star-7 {
+        top: 81%;
+        left: 29%;
+      }
+
+      .advent-calendar-section .star-shadow.star-3 {
+        top: 82%;
+        left: 47%;
+      }
+
+      .advent-calendar-section .star-shadow.star-11 {
+        top: 81%;
+        left: 63%;
+      }
+
+      .advent-calendar-section .star-shadow.star-1 {
+        top: 79.5%;
+        left: 80%;
+      }
+    }
+
+    .advent-calendar-section .star-shadow.active:hover {
+      filter: drop-shadow(0px 0px 20px rgb(255, 206, 43)) drop-shadow(0px 0px 35px rgba(221, 172, 36, 0.9)) drop-shadow(0px 0px 50px rgba(201, 167, 17, 0.8));
+    }
+
+    .advent-calendar-section .star-shadow.locked {
+      cursor: not-allowed;
+    }
+
+    .advent-calendar-section .star-shadow.locked:hover {
+      filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.8)) drop-shadow(0px 0px 25px rgba(0, 0, 0, 0.6)) drop-shadow(0px 0px 35px rgba(0, 0, 0, 0.4));
+    }
+
+    .advent-calendar-section .star-shadow.locked .star-wrapper {
+      cursor: not-allowed;
+      transition: background-color 0.25s ease-out, transform 0.25s ease-out;
+    }
+
+    .advent-calendar-section .star-shadow.locked:hover .star-wrapper {
+      background-color: #7a4f1f;
+    }
+
+    .advent-calendar-section .star-shadow.locked:hover .star {
+      background: #725726;
+    }
+
+    .advent-calendar-section .star-wrapper {
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 72%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%);
+      background-color: #b47b31;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.25s ease-out;
+      cursor: pointer;
+      transform-origin: center center;
+      will-change: transform;
+
+    }
+
+    /* Only active stars scale on hover */
+    .advent-calendar-section .star-shadow.active:hover .star-wrapper {
+      transform: scale(1.14);
+    }
+
+    /* Locked stars don't scale on hover */
+    .advent-calendar-section .star-shadow.locked:hover .star-wrapper {
+      transform: scale(1);
+    }
+
+    .advent-calendar-section .star {
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
+      background: #cf9242;
+      clip-path: polygon(50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 72%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #AE1D0D;
+      font-weight: bold;
+      font-size: 22px;
+      position: relative;
+      transition: background 0.25s ease-out;
+    }
+
+    .advent-calendar-section .star span {
+      position: relative;
+      z-index: 2;
+      font-size: 18px;
+    }
+
+    .advent-calendar-section .star-shadow {
+      position: absolute;
+      top: 31%;
+      left: 34.5%;
+      width: 63px;
+      height: 63px;
+      z-index: 999999;
+      transition: filter 0.25s ease-out;
+      filter: drop-shadow(0 0 0 transparent);
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    .advent-calendar-section .star-9 {
+      left: 43%;
+    }
+
+    .advent-calendar-section .star-10 {
+      top: 44%;
+      left: 28%;
+    }
+
+    .advent-calendar-section .star-21 {
+      top: 44.5%;
+      left: 33%;
+    }
+
+    .advent-calendar-section .star-15 {
+      top: 45%;
+      left: 40.5%;
+    }
+
+    .advent-calendar-section .star-2 {
+      top: 45%;
+      left: 48.3%;
+    }
+
+    .advent-calendar-section .star-17 {
+      top: 57.2%;
+      left: 24.5%;
+    }
+
+    .advent-calendar-section .star-8 {
+      top: 58%;
+      left: 31.5%;
+    }
+
+    .advent-calendar-section .star-13 {
+      top: 58.8%;
+      left: 42.1%;
+    }
+
+    .advent-calendar-section .star-19 {
+      top: 58.6%;
+      left: 52.5%;
+    }
+
+    .advent-calendar-section .star-16 {
+      top: 57%;
+      left: 58.5%;
+    }
+
+    .advent-calendar-section .star-14 {
+      top: 71.3%;
+      left: 21%;
+    }
+
+    .advent-calendar-section .star-24 {
+      top: 71.8%;
+      left: 29.6%;
+    }
+
+    .advent-calendar-section .star-4 {
+      top: 72.5%;
+      left: 37.8%;
+    }
+
+    .advent-calendar-section .star-20 {
+      top: 72.5%;
+      left: 45%;
+    }
+
+    .advent-calendar-section .star-5 {
+      top: 72.5%;
+      left: 54.3%;
+    }
+
+    .advent-calendar-section .star-12 {
+      top: 69%;
+      left: 62%;
+    }
+
+    .advent-calendar-section .star-18 {
+      top: 84.5%;
+      left: 15.2%;
+    }
+
+    .advent-calendar-section .star-6 {
+      top: 85.9%;
+      left: 22.6%;
+    }
+
+    .advent-calendar-section .star-22 {
+      top: 86.5%;
+      left: 30.6%;
+    }
+
+    .advent-calendar-section .star-7 {
+      top: 87%;
+      left: 40.6%;
+    }
+
+    .advent-calendar-section .star-3 {
+      top: 87%;
+      left: 50.2%;
+    }
+
+    .advent-calendar-section .star-11 {
+      top: 86.3%;
+      left: 58.7%;
+    }
+
+    .advent-calendar-section .star-1 {
+      top: 83.3%;
+      left: 65.7%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ADVENT CALENDAR SECTION - Ready for embedding -->
+  <div class="advent-calendar-section">
+    <img src="./Hintergrund.png" class="bg-mobile" alt="Advent Background">
+    <img src="./Hintergrund-mobile.png" class="bg-mobile-2" alt="Advent Background">
+    <div class="star-shadow star-23">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>23</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-9">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>9</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-10">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>10</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-21">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>21</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-15">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>15</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-2">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>2</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-17">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>17</span>
+        </div>
+      </div>
+    </div>
+    <div class="star-shadow star-8">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>8</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-13">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>13</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-19">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>19</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-16">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>16</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-14">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>14</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-24">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>24</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-4">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-20">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>20</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-5">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="star-shadow star-12">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>12</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="star-shadow star-18">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>18</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="star-shadow star-6">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>6</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="star-shadow star-22">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>22</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="star-shadow star-7">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>7</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="star-shadow star-3">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>3</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="star-shadow star-11">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>11</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="star-shadow star-1">
+      <div class="star-wrapper">
+        <div class="star">
+          <span>1</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <script>
+    (function () {
+      'use strict';
+      const today = new Date();
+      const todayDate = today.getDate();
+
+      // Scope to advent calendar section to avoid conflicts
+      const calendarSection = document.querySelector('.advent-calendar-section');
+      if (!calendarSection) return;
+
+      const stars = calendarSection.querySelectorAll('.star-shadow');
+
+      stars.forEach(star => {
+        const spanElement = star.querySelector('.star span');
+        let starDate = null;
+
+        if (spanElement) {
+          starDate = parseInt(spanElement.textContent.trim());
+        }
+
+        if (!starDate || isNaN(starDate)) {
+          const starClasses = star.className.split(' ');
+          for (let cls of starClasses) {
+            if (cls.startsWith('star-') && cls !== 'star-shadow') {
+              starDate = parseInt(cls.replace('star-', ''));
+              break;
+            }
+          }
+        }
+
+        if (starDate && !isNaN(starDate) && starDate >= 1 && starDate <= 24) {
+          if (starDate <= todayDate) {
+            star.classList.add('active');
+          } else {
+            star.classList.add('locked');
+          }
+        }
+      });
+
+    })();
+  </script>
+
+</body>
+
+</html>
